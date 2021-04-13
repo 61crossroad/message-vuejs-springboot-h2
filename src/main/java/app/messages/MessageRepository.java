@@ -1,6 +1,7 @@
 package app.messages;
 
 import java.util.List;
+import java.util.Objects;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -35,5 +36,16 @@ public class MessageRepository {
 		String hql = "from Message";
 		Query<Message> query = session.createQuery(hql, Message.class);
 		return query.list();
+	}
+
+	public Integer deleteMessage(Integer id) {
+		Session session = sessionFactory.getCurrentSession();
+		Message message = (Message) session.get(Message.class, id);
+		if (!Objects.isNull(message)) {
+			session.delete(message);
+			return id;
+		} else {
+			return 0;
+		}
 	}
 }

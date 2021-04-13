@@ -73,10 +73,17 @@
                         .then((response) => {
                             this.messages.push(response.data);
                             this.newMessage = '';
-                        })
+                        });
                 },
                 deleteMessage(message) {
-                    this.messages.splice(this.messages.indexOf(message), 1);
+                    if (message.id) {
+                        axios.delete('api/messages/' + message.id)
+                            .then((response) => {
+                                if (response.data == message.id) {
+                                    this.messages.splice(this.messages.indexOf(message), 1);
+                                }
+                            });
+                    }
                 }
             }
         });

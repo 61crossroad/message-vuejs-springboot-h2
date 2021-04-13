@@ -38,4 +38,10 @@ public class MessageService {
 	/* private void updateStatistics() {
 		throw new UnsupportedOperationException("This method is not implemented yet");
 	} */
+
+	@SecurityCheck
+	@Transactional
+	public Integer delete(Integer id) {
+		return repository.deleteMessage(id);
+	}
 }

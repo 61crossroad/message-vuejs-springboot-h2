@@ -3,7 +3,7 @@
 export default {
     name: 'MessageListItem',
     // mixins: [lifecycleLogger],
-    template: `<li>{{ item.text }} - {{ item.createdAt | datetime }}
+    template: `<li>{{ item.id }} : {{ item.text }} - {{ item.createdAt | datetime }}
     <button @click="deleteClicked">X</button></li>`,
     props: {
         item: {
