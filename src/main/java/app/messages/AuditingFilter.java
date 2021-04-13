@@ -26,7 +26,9 @@ public class AuditingFilter extends GenericFilterBean {
 		long elapsed = new Date().getTime() - start;
 		HttpServletRequest request = (HttpServletRequest) req;
 		// logger.debug("Request[uri=" + request.getRequestURI() + ", method=" + request.getMethod() + "] completed in " + elapsed + "ms");
-		log.info("Request[uri=" + request.getRequestURI() + ", method=" + request.getMethod() + "] completed in " + elapsed + "ms");
+		if (!request.getRequestURI().contains(".js") && !request.getRequestURI().contains("axios")) {
+			log.info("Request[uri=" + request.getRequestURI() + ", method=" + request.getMethod() + "] completed in " + elapsed + "ms");
+		}
 	}
 
 }
