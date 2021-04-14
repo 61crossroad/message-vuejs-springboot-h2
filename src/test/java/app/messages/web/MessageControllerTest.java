@@ -20,8 +20,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import app.messages.Message;
-import app.messages.MessageService;
+import app.messages.model.Message;
+import app.messages.service.MessageService;
 
 @SpringBootTest(webEnvironment = WebEnvironment.MOCK)
 @AutoConfigureMockMvc

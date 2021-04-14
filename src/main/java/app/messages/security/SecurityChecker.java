@@ -1,4 +1,4 @@
-package app.messages;
+package app.messages.security;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -14,7 +14,7 @@ public class SecurityChecker {
 	
 	private final static Log log = LogFactory.getLog(SecurityChecker.class);
 	
-	@Pointcut("@annotation(SecurityCheck)")
+	@Pointcut("@annotation(app.messages.security.SecurityCheck)")
 	public void checkMethodSecurity() {}
 	
 	@Around("checkMethodSecurity()")

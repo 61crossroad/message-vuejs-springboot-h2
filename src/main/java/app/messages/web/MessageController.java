@@ -1,7 +1,9 @@
-package app.messages;
+package app.messages.web;
 
 import java.util.List;
 
+import app.messages.model.Message;
+import app.messages.service.MessageService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

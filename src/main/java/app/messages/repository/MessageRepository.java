@@ -1,8 +1,9 @@
-package app.messages;
+package app.messages.repository;
 
 import java.util.List;
 import java.util.Objects;
 
+import app.messages.model.Message;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.SessionFactory;

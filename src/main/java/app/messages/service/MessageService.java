@@ -1,9 +1,12 @@
-package app.messages;
+package app.messages.service;
 
 import java.util.List;
 
 // import org.apache.commons.logging.LogFactory;
 // import org.apache.commons.logging.Log;
+import app.messages.model.Message;
+import app.messages.repository.MessageRepository;
+import app.messages.security.SecurityCheck;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
